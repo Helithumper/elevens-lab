@@ -1,0 +1,9 @@
+Questions:
+1. Cards, Paper, Pen ; Cards, Score
+2. Setup Board and then Shuffle and Setup Cards
+3. No, some methods are not implemented
+4. Line 206
+ b. None
+ c. 0,1,3,6,7
+ d. for(int i:cIndexes){System.out.println(board.cardAt(i));}
+ e. None of them, no methods called the Contains methods
