@@ -102,7 +102,16 @@ public class Shuffler {
 		}
 	}
 
-	public static Boolean arePermutations(int[] a, int[] b) {
+	
+}
+
+/*
+ * Questions: 
+ * 
+ * 1. public static String flip(){ Random rand = new Random(); String
+ * result = (rand.nextInt((3)+1)==1) ? "tails" : "heads"; return result; }
+ * 
+ * 2.public static Boolean arePermutations(int[] a, int[] b) {
 		for (int i = 0; i < a.length - 1; i++) { // For each element in the
 			// array
 			int smallestIndex = i; // Assume that the first value is the
@@ -143,9 +152,6 @@ public class Shuffler {
 		array[a] = array[b];
 		array[b] = temp;
 	}
-}
-
-/*
- * Questions: 1. public static String flip(){ Random rand = new Random(); String
- * result = (rand.nextInt((3)+1)==1) ? "tails" : "heads"; return result; }
+	
+	3. 3, 2
  */
