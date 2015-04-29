@@ -1,0 +1,9 @@
+1.Elevens:
+  thirteens: Chance of winning 1 in 2
+  tens:Chances of winning one in 8
+  Common in all: all use cards. All depend on cards "Point Values". Each game requires cards on the board
+  Methods for card behavior are identical across games. All can Inherit Elements from each other.
+2. The objects inherited from the abstract board class are assigned new values when used in the ElevensBoard class.
+This Method is Polymorphism
+3. Yes they do. The Boards class contains all of the necessary methods that are common between the games and the
+Elevens board uses polymorphism to "select" the correct values for each method.
