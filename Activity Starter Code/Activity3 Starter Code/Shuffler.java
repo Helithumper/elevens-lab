@@ -10,12 +10,12 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call to
 	 * each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 100;
+	private static final int SHUFFLE_COUNT = 4;
 
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 52;
+	private static final int VALUE_COUNT = 5;
 
 	/**
 	 * Tests shuffling methods.
@@ -31,7 +31,7 @@ public class Shuffler {
 			values1[i] = i;
 		}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
+			values1 = perfectShuffle(values1);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
 				System.out.print(" " + values1[k]);
@@ -47,7 +47,7 @@ public class Shuffler {
 			values2[i] = i;
 		}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			selectionShuffle(values2);
+			values2 = selectionShuffle(values2);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values2.length; k++) {
 				System.out.print(" " + values2[k]);
@@ -65,18 +65,25 @@ public class Shuffler {
 	 * @param values
 	 *            is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) {
-		int[] shuffled = new int[52];
+	public static int[] perfectShuffle(int[] values) {
+		int max = (values.length+1)/2;
+		int[] shuffled = new int[values.length];
 		int k = 0;
-		for (int j = 0; j < (values.length + 1) / 2; j++) {
+		for (int j = 0; j < (values.length); j++) {
 			shuffled[k] = values[j];
+			k++;
+		}
+		k = 0;
+		for (int j = 0; j < max; j++) {
+			values[k] = shuffled[j];
 			k += 2;
 		}
-		k = 1;
-		for (int j = 26; j < values.length; j++) {
-			shuffled[k] = values[j];
-			k += 2;
+		k=1;
+		for (int j = max+1; j < values.length; j++){
+			values[k] = shuffled[j];
+			k+=2;
 		}
+		return values;
 	}
 
 	/**
@@ -92,7 +99,7 @@ public class Shuffler {
 	 * @param values
 	 *            is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
+	public static int[] selectionShuffle(int[] values) {
 		Random rand = new Random();
 		for (int k = values.length - 1; k > 0; k--) {
 			int r = rand.nextInt((k) + 1);
@@ -100,6 +107,7 @@ public class Shuffler {
 			values[k] = values[r];
 			values[r] = transfer;
 		}
+		return values;
 	}
 
 	
