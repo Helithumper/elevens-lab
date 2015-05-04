@@ -1,0 +1,8 @@
+1) Size is an instance variable. There is no need since the size variable is already defined in the subclass.
+
+2) Removing and replacing cards is uniform regardless of which game is being played. 
+Thus it can be implemented in the Board class and does not need to be an abstract method.
+
+3) isLegal() and anotherPlayIsPossible() would still be called using poly-morphism. 
+This design can still work but all of the methods would have to be implemented 
+separately for each card game board class.
